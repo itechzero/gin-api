@@ -33,11 +33,16 @@ func Routers() *gin.Engine {
 func initUserRouter(Router *gin.RouterGroup) {
 	UserRouter := Router.Group("user")
 	{
-		UserRouter.POST("register", v1.UserCtr.CreateUser)
+		UserRouter.GET("index", v1.UserList)
+		UserRouter.POST("register", v1.Register)
 		//		api.POST("/v1/users/create", v1.UserCtr.CreateUser)
 		//		api.GET("/v1/users/index", v1.UserCtr.GetUserInfo)
 		//		api.GET("/v1/users", v1.UserCtr.GetUserList)
 		//		api.PUT("/v1/users/update", v1.UserCtr.UpdateEmail)
 		//		api.DELETE("/v1/users/delete", v1.UserCtr.DeleteUser)
+		//UserRouter.POST("changePassword", v1.ChangePassword)
+		//UserRouter.POST("setUserAuthority", v1.SetUserAuthority)
+		//UserRouter.DELETE("deleteUser", v1.DeleteUser)
+		//UserRouter.PUT("setUserInfo", v1.SetUserInfo)
 	}
 }
